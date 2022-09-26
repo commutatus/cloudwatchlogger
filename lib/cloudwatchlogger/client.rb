@@ -1,7 +1,7 @@
 require 'multi_json'
 require 'socket'
 require 'thread'
-require 'uuid'
+require 'securerandom'
 
 module CloudWatchLogger
   module Client
