@@ -78,13 +78,11 @@ module CloudWatchLogger
       end
 
       def setup_log_stream_name(name)
-        uuid = UUID.new
-        prefix = name || default_log_stream_name
-        @log_stream_name = "#{prefix}-#{uuid.generate}"
+        @log_stream_name = name || default_log_stream_name
       end
 
       def default_log_stream_name
-        @log_stream_name ||= "#{Socket.gethostname}"
+        @log_stream_name ||= "#{Socket.gethostname}-#{SecureRandom.uuid}"
       end
 
       def epoch_from(datetime)
