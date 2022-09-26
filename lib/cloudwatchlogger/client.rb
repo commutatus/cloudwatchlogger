@@ -1,7 +1,6 @@
 require 'multi_json'
 require 'socket'
 require 'thread'
-require 'uuid'
 
 module CloudWatchLogger
   module Client
@@ -82,8 +81,7 @@ module CloudWatchLogger
       end
 
       def default_log_stream_name
-        uuid = UUID.new
-        @log_stream_name ||= "#{Socket.gethostname}-#{uuid.generate}"
+        @log_stream_name ||= "#{Socket.gethostname}-default"
       end
 
       def epoch_from(datetime)
