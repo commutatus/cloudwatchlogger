@@ -8,7 +8,7 @@ Can be used in place of Ruby's Logger
 
 In fact, it (currently) returns an instance of Logger.
 
-Forked from [loggiler](https://github.com/freeformz/logglier).
+Forked from (<https://github.com/zshannon/cloudwatchlogger>).
 
 Usage
 -----
@@ -40,18 +40,10 @@ Provding an empty hash instead of credentials will cause the AWS SDK to search t
 config/environments/production.rb
 ```ruby
 RailsApplication::Application.configure do
-  config.logger = CloudWatchLogger.new({access_key_id: 'YOUR_ACCESS_KEY_ID', secret_access_key: 'YOUR_SECRET_ACCESS_KEY'}, 'YOUR_CLOUDWATCH_LOG_GROUP')
+  config.logger = CloudWatchLogger.new({access_key_id: 'YOUR_ACCESS_KEY_ID', secret_access_key: 'YOUR_SECRET_ACCESS_KEY'}, 'YOUR_CLOUDWATCH_LOG_GROUP', 'YOUR_CLOUDWATCH_LOG_STREAM', 'YOUR_CLOUDWATCH_REGION')
 end
 ```
 
-
-### With Rails 4
-
-config/initializers/cloudwatchlogger.rb
-```ruby
-cloudwatchlogger = CloudWatchLogger.new({access_key_id: 'YOUR_ACCESS_KEY_ID', secret_access_key: 'YOUR_SECRET_ACCESS_KEY'}, 'YOUR_CLOUDWATCH_LOG_GROUP')
-Rails.logger.extend(ActiveSupport::Logger.broadcast(cloudwatchlogger))
-```
 
 Logging
 -------
@@ -94,6 +86,6 @@ Releasing
 Bugs
 -----
 
-https://github.com/zshannon/cloudwatchlogger/issues
+https://github.com/commutatus/cloudwatchlogger/issues
 
 Pull requests welcome.

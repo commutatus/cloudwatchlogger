@@ -2,7 +2,7 @@ dir = File.dirname(__FILE__)
 require File.expand_path(File.join(dir, 'lib', 'cloudwatchlogger', 'version'))
 
 Gem::Specification.new do |s|
-  s.name              = 'cloudwatchlogger'
+  s.name              = 'cm-cloudwatchlogger'
   s.version           = CloudWatchLogger::VERSION
   s.date              = Time.now
   s.summary           = 'Amazon CloudWatch Logs compatiable logger for ruby.'
@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
 
   s.license           = "MIT"
 
-  s.authors           = ["Zane Shannon"]
-  s.email             = 'z@zcs.me'
-  s.homepage          = 'http://github.com/zshannon/cloudwatchlogger'
+  s.authors           = ["Zane Shannon", "Manikandan"]
+  s.email             = ['z@zcs.me', 'manikandan0603@gmail.com']
+  s.homepage          = 'http://github.com/commutatus/cloudwatchlogger'
 
   s.files             = %w{ README.md Gemfile LICENSE cloudwatchlogger.gemspec } + Dir["lib/**/*.rb"]
   s.require_paths     = ['lib']
